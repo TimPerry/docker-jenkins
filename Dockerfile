@@ -12,6 +12,10 @@ RUN curl -L https://releases.rancher.com/cli/v2.0.3/rancher-linux-amd64-v2.0.3.t
 RUN mv build_tmp/rancher*/rancher /usr/local/bin 
 RUN chmod a+x /usr/local/bin/rancher
 
+RUN curl -o build_tmp/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.11.0/bin/linux/amd64/kubectl
+RUN mv build_tmp/kubectl /usr/local/bin
+RUN chmod a+x /usr/local/bin/kubectl
+
 RUN rm -rf build_tmp
 
 USER jenkins
