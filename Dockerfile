@@ -2,6 +2,8 @@ FROM jenkinsci/blueocean
 
 USER root
 
+ENV JENKINS_OPTS --httpPort=-1 --httpsPort=8083 --httpsCertificate=/var/lib/jenkins/cert --httpsPrivateKey=/var/lib/jenkins/pk
+
 RUN mkdir build_tmp
 
 RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar -xz -C build_tmp
