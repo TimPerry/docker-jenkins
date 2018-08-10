@@ -3,6 +3,7 @@ FROM jenkinsci/blueocean
 USER root
 
 ENV JENKINS_OPTS --httpPort=-1 --httpsPort=8083 --httpsCertificate=/var/lib/jenkins/cert --httpsPrivateKey=/var/lib/jenkins/pk
+EXPOSE 8083
 
 RUN mkdir build_tmp
 
