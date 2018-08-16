@@ -16,6 +16,10 @@ RUN curl -o build_tmp/kubectl https://storage.googleapis.com/kubernetes-release/
 RUN mv build_tmp/kubectl /usr/local/bin
 RUN chmod a+x /usr/local/bin/kubectl
 
+RUN curl -o build_tmp/docker-compose -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
+RUN mv build_tmp/docker-compose /usr/local/bin
+RUN chmod a+x /usr/local/bin/docker-compose
+
 RUN rm -rf build_tmp
 
 USER jenkins
